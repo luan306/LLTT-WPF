@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Project",
-    "\\Project\\QuanLyKho"
+    "\\Project\\QuanLyKho",
+    "\\Project\\QuanLyKho\\QuanLyKho"
   ],
-  "SelectedNode": "\\Project\\QuanLyKho\\QuanLyKho.sln",
+  "SelectedNode": "\\Project\\QuanLyKho\\QuanLyKho\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

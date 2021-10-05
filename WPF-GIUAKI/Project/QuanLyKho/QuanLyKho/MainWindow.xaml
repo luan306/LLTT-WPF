@@ -22,7 +22,7 @@
         
         Name="mainWindow"
         DataContext="{StaticResource MainVM}"
-        Title="Phần mềm" Height="500" Width="525">
+        Title="Phần mềm quản lý nhân viên" Height="500" Width="625">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"/>
@@ -35,6 +35,98 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--menu-->
+            <Grid Grid.Row="0">
+                <Menu
+  IsMainMenu="True">
+                    <MenuItem
+    Header="_File">
+                        <MenuItem
+      Header="Save"
+      Icon="{materialDesign:PackIcon Kind=ContentSave}"></MenuItem>
+                        <MenuItem
+      Header="Save As.." />
+                        <MenuItem
+      Header="Exit"
+      InputGestureText="Ctrl+E"
+      Icon="{materialDesign:PackIcon Kind=ExitToApp}" />
+                        <Separator />
+                        <MenuItem
+      Header="Excellent"
+      IsCheckable="True"
+      IsChecked="True" />
+                        <MenuItem
+      Header="Rubbish"
+      IsCheckable="True" />
+                        <MenuItem
+      Header="Dig Deeper"
+      InputGestureText="Ctrl+D">
+                            <MenuItem
+        Header="Enlightenment?"
+        IsCheckable="True" />
+                            <MenuItem
+        Header="Disappointment"
+        IsCheckable="True" />
+                        </MenuItem>
+                        <MenuItem
+      Header="Look Deeper"
+      InputGestureText="Ctrl+D">
+                            <MenuItem
+        Header="Plain" />
+                            <MenuItem
+        Header="Ice Cream" />
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem
+    Header="_Edit">
+                        <MenuItem
+      Header="_Cut"
+      Command="Cut"
+      Icon="{materialDesign:PackIcon Kind=ContentCut}" />
+                        <MenuItem
+      Header="_Copy"
+      Command="Copy"
+      Icon="{materialDesign:PackIcon Kind=ContentCopy}" />
+                        <MenuItem
+      Header="_Paste"
+      Command="Paste"
+      Icon="{materialDesign:PackIcon Kind=ContentPaste}" />
+                    </MenuItem>
+                </Menu>
+            </Grid>
+
+            <!--main-->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--Filter-->
+                <Grid Grid.Row="0">
+                    <materialDesign:Card Margin="5">
+                        <Grid Grid.Row="0">
+                            
+                        </Grid>
+                    </materialDesign:Card>
+                </Grid>
+
+                <!--list-->
+                <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
+                    <Grid >
+     
+                    </Grid>
+                </materialDesign:Card>
+
+            </Grid>
         </Grid>
     </Grid>
 </Window>
