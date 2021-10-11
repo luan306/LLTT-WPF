@@ -61,3 +61,8 @@ D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\obj\Debug
 D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.pdb
 D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\obj\Debug\UserWindow.g.cs
 D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\obj\Debug\UserWindow.baml
+D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.dll
+D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.xml
+D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIUAKI_WPF\Project-20211005T040753Z-001\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho_Content.g.cs
