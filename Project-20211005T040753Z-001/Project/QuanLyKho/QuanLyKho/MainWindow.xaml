@@ -75,11 +75,11 @@
                                     <TextBlock Text="Đăng nhập" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24"  Kind="ArrowDownBoldCircleOutline" />
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24"  Kind="Account" />
                                 </Grid>
                             </Grid>
                         </Button>
-                        <Button Command="{Binding OutputCommand}" Grid.Column="1" ToolTip="Xuất kho">
+                        <Button Grid.Column="1" ToolTip="Lưu">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -89,23 +89,13 @@
                                     <TextBlock Text="Lưu" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="ArrowUpBoldCircleOutline" />
+                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="ContentSave" />
+                                    
                                 </Grid>
                             </Grid>
                         </Button>
                         <Button Command="{Binding UnitCommand}" Grid.Column="2" ToolTip="Vật tư">
-                            <!--<Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
-                                    <TextBlock Text="Vật tư" HorizontalAlignment="Center"></TextBlock>
-                                </Grid>
-                                <Grid Grid.Row="1">
-                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Dns" />
-                                </Grid>
-                            </Grid>-->
+                           
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -126,38 +116,52 @@
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <TextBlock Text="Thêm" HorizontalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Đặt Lịch" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Altimeter" />
+                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="AccountMultiplePlus" />
                                 </Grid>
                             </Grid>
                         </Button>
-                        <Button Grid.Column="4" Command="{Binding SuplierCommand}" ToolTip="Nhà cung cấp">
+                        <Button Grid.Column="4" ToolTip="Nhà cung cấp">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <TextBlock Text="Xóa" HorizontalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Xóa Lịch" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Factory" />
+                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Delete" />
                                 </Grid>
                             </Grid>
                         </Button>
-                        <Button Grid.Column="5" Command="{Binding CustomerCommand}" ToolTip="Khách hàng">
+                        <Button Grid.Column="5" ToolTip="Sữa Lịch">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <TextBlock Text="Sữa" HorizontalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Sữa Lịch" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="1">
                                     <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="HumanHandsup" />
+                                </Grid>
+                            </Grid>
+                        </Button>
+                        <Button Grid.Column="6" ToolTip="Thoát">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <TextBlock Text="Thoát" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="CloseOctagon" />
                                 </Grid>
                             </Grid>
                         </Button>
@@ -191,81 +195,115 @@
                 </Grid>
 
                 <!--list-->
-                <materialDesign:Card VerticalAlignment="Stretch" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                <materialDesign:Card VerticalAlignment="Stretch" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,0,0,-160">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" >
 
-                    <Grid Grid.Row="0" >
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="CHÀO MỪNG ĐẾN VỚI DỊCH VỤ ĐĂNG KÍ DU LỊCH MYTRAVEL" Width="585" Background="LightYellow" Margin="0,0,30,376" FontSize="20"  FontFamily="Times New Roman" HorizontalAlignment="Right" SelectionOpacity="9" TextAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
+                            <Grid Grid.Row="0" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBox materialDesign:HintAssist.Hint="CHÀO MỪNG ĐẾN VỚI DỊCH VỤ ĐĂNG KÍ DU LỊCH MYTRAVEL" Width="585" Background="LightYellow" Margin="0,0,30,376" FontSize="20"  FontFamily="Times New Roman" HorizontalAlignment="Center" SelectionOpacity="9" TextAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
 
-                        </Grid>
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Họ và tên"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="39,65,338,311" />
-                            <materialDesign:PackIcon Kind="Account" Margin="1,78,0,0" Height="26" Width="37" />
+                            </Grid>
+                            <Grid Grid.Row="0" Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <TextBox materialDesign:HintAssist.Hint="Họ và tên"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="39,65,-211,307" />
+                                    <materialDesign:PackIcon Kind="Account" Margin="-1,78,0,0" Height="26" Width="37" />
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <TextBox materialDesign:HintAssist.Hint="Số điện thoại"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,125,-210,250" />
+                                    <materialDesign:PackIcon Kind="Phone" Height="30" Width="25" Margin="-35,132,0,0" RenderTransformOrigin="-1.62,0.75" />
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <TextBox materialDesign:HintAssist.Hint="Số lượng người"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,183,406,190" />
+                                    <materialDesign:PackIcon Kind="AccountMultiple" Height="30" Width="25" Margin="-35,192,625,0" HorizontalAlignment="Right" />
 
-                        </Grid>
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Số điện thoại"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="36,126,340,253" />
-                            <materialDesign:PackIcon Kind="Phone" Height="30" Width="25" Margin="10,132,0,0" RenderTransformOrigin="0.78,0.867" />
-                        </Grid>
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Số lượng người"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="33,184,341,195" />
-                            <materialDesign:PackIcon Kind="AccountMultiple" Height="30" Width="25" Margin="8,192,0,0" />
-                        </Grid>
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Ghi chú"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="38,234,343,142" />
-                            <materialDesign:PackIcon Kind="Note" HorizontalAlignment="Right" Margin="0,246,589,0" Height="26" Width="30" />
-                        </Grid>
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Địa điểm muốn du lịch"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="375,68,23,307" RenderTransformOrigin="0.339,0.6" />
-                            <materialDesign:PackIcon Kind="MapMarker" Height="27" Width="30" RenderTransformOrigin="4.649,1.6" Margin="336,81,0,0" />
-                        </Grid>
-                        <Grid Grid.Row="0">
-                            <materialDesign:PackIcon Kind="Cash" Height="26" Width="26" Margin="338,136,0,0" RenderTransformOrigin="6.582,1.294" />
-                            <ComboBox
-  materialDesign:HintAssist.Hint="Chi phí dự tính" Margin="370,137,24,253" Height="25">
-                                <ComboBoxItem
+                                </Grid>
+                                <Grid Grid.Column="3">
+                                    <TextBox materialDesign:HintAssist.Hint="Ghi chú"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-6,234,401,139" RenderTransformOrigin="0.442,0.538" />
+                                    <materialDesign:PackIcon Kind="Note" HorizontalAlignment="Right" Margin="-38,246,623,0" Height="26" Width="30" />
+
+                                </Grid>
+                                <Grid Grid.Column="4">
+                                    <TextBox materialDesign:HintAssist.Hint="Địa điểm muốn du lịch"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="325,68,73,307" RenderTransformOrigin="0.339,0.6" />
+                                    <materialDesign:PackIcon Kind="MapMarker" Height="27" Width="30" RenderTransformOrigin="4.649,1.6" Margin="292,81,0,0" />
+
+                                </Grid>
+                                <Grid Grid.Column="5">
+                                    <materialDesign:PackIcon Kind="Cash" Height="26" Width="26" Margin="292,136,0,0" RenderTransformOrigin="6.582,1.294" />
+                                    <ComboBox
+  materialDesign:HintAssist.Hint="Chi phí dự tính" Margin="324,137,70,253" Height="25">
+                                        <ComboBoxItem
     Content="5tr - 10tr" />
-                                <ComboBoxItem
+                                        <ComboBoxItem
     Content="10tr - 20tr" />
-                                <ComboBoxItem
+                                        <ComboBoxItem
     Content="20tr - 30tr" />
-                                <ComboBoxItem
+                                        <ComboBoxItem
     Content="30tr trở lên" />
-                            </ComboBox>
+                                    </ComboBox>
+
+                                </Grid>
+                                <Grid Grid.Column="6">
+                                    <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" Width="227" materialDesign:HintAssist.Hint="Ngày bắt đầu" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="325,197,0,190" Height="28" />
+                                    <materialDesign:PackIcon Kind="ViewDay" Height="28" Margin="291,194,0,0" Width="26" RenderTransformOrigin="7.279,-1.331" />
+                                </Grid>
+                                <Grid Grid.Column="7">
+                                    <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" Width="226" materialDesign:HintAssist.Hint="Ngày kết thúc" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="330,249,0,138" Height="28" />
+                                    <materialDesign:PackIcon Kind="ViewDay" Height="27" Margin="290,248,0,0" Width="25" RenderTransformOrigin="7.279,-1.331" />
+                                </Grid>
+                            </Grid>
+
+                           
+                            <Grid Margin="0,0,0,-155">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <ListView Margin="0,303,0,-160">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>
+                                            <GridViewColumn Header="Họ Và Tên" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
+                                            <GridViewColumn Header="Số Điện Thoại" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Số Lượng Người" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Ghi Chú" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Chi Phí" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Ngày Bắt Đầu" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Ngày Kết Thúc" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
                         </Grid>
-                        <Grid Grid.Column="0">
-                            <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" Width="211" materialDesign:HintAssist.Hint="Ngày bắt đầu" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="365,196,0,193" />
-                            <materialDesign:PackIcon Kind="ViewDay" Height="28" Margin="339,196,0,0" Width="26" RenderTransformOrigin="7.279,-1.331" />
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" Width="211" materialDesign:HintAssist.Hint="Ngày kết thúc" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="366,248,0,143" />
-                            <materialDesign:PackIcon Kind="ViewDay" Height="27" Margin="340,248,0,0" Width="25" RenderTransformOrigin="7.279,-1.331" />
-                        </Grid>
-                        <Grid Grid.Row="2">
-                            <ListView ItemsSource="{Binding TonKhoList}" Margin="-10,280,10,0">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>
-                                        <GridViewColumn Header="Họ Và Tên" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
-                                        <GridViewColumn Header="Số Điện Thoại" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                        <GridViewColumn Header="Số Lượng Người" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                        <GridViewColumn Header="Ghi Chú" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                        <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                        <GridViewColumn Header="Chi Phí" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                        <GridViewColumn Header="Ngày Bắt Đầu" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                        <GridViewColumn Header="Ngày Kết Thúc" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                        </Grid>
+
                     </Grid>
-
-
 
 
                 </materialDesign:Card>
