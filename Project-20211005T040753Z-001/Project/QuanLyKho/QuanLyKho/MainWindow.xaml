@@ -22,7 +22,7 @@
         
         Name="mainWindow"
         DataContext="{StaticResource MainVM}"
-        Title="Phần mềm quản lý nhân viên" Height="500" Width="625">
+        Title="Phần mềm quản lý nhân viên" Height="700" Width="925">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}"/>
@@ -65,10 +65,10 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        
-                        
+
+
                         <Button Command="{Binding UnitCommand}" Grid.Column="0" ToolTip="Vật tư">
-                           
+
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -82,7 +82,7 @@
                                 </Grid>
                             </Grid>
                         </Button>
-                        <Button Grid.Column="1" Command="{Binding UnitCommand}" ToolTip="Đơn vị đo">
+                        <Button Grid.Column="1" Command="{Binding AddCommand}" ToolTip="Đơn vị đo">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -96,7 +96,7 @@
                                 </Grid>
                             </Grid>
                         </Button>
-                        <Button Grid.Column="2" ToolTip="Nhà cung cấp">
+                        <Button Grid.Column="2" Command="{Binding DeleteCommand}" ToolTip="Nhà cung cấp" >
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -110,7 +110,7 @@
                                 </Grid>
                             </Grid>
                         </Button>
-                        <Button Grid.Column="3" ToolTip="Sữa Lịch">
+                        <Button Grid.Column="3" Command="{Binding EditCommand}" ToolTip="Sữa Lịch">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -124,7 +124,7 @@
                                 </Grid>
                             </Grid>
                         </Button>
-                        
+
 
 
 
@@ -186,29 +186,29 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <TextBox materialDesign:HintAssist.Hint="Họ và tên"
+                                    <TextBox materialDesign:HintAssist.Hint="Họ và tên" Text="{Binding Name}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="39,65,-211,307" />
                                     <materialDesign:PackIcon Kind="Account" Margin="-1,78,0,0" Height="26" Width="37" />
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox materialDesign:HintAssist.Hint="Số điện thoại"
+                                    <TextBox materialDesign:HintAssist.Hint="Số điện thoại" Text="{Binding Phone}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,125,-210,250" />
                                     <materialDesign:PackIcon Kind="Phone" Height="30" Width="25" Margin="-35,132,0,0" RenderTransformOrigin="-1.62,0.75" />
                                 </Grid>
                                 <Grid Grid.Column="2">
-                                    <TextBox materialDesign:HintAssist.Hint="Số lượng người"
+                                    <TextBox materialDesign:HintAssist.Hint="Số lượng người" Text="{Binding soluong}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,183,406,190" />
                                     <materialDesign:PackIcon Kind="AccountMultiple" Height="30" Width="25" Margin="-35,192,625,0" HorizontalAlignment="Right" />
 
                                 </Grid>
                                 <Grid Grid.Column="3">
-                                    <TextBox materialDesign:HintAssist.Hint="Ghi chú"
+                                    <TextBox materialDesign:HintAssist.Hint="Ghi chú" Text="{Binding ghichu}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-6,234,401,139" RenderTransformOrigin="0.442,0.538" />
                                     <materialDesign:PackIcon Kind="Note" HorizontalAlignment="Right" Margin="-38,246,623,0" Height="26" Width="30" />
 
                                 </Grid>
                                 <Grid Grid.Column="4">
-                                    <TextBox materialDesign:HintAssist.Hint="Địa điểm muốn du lịch"
+                                    <TextBox materialDesign:HintAssist.Hint="Địa điểm muốn du lịch" Text="{Binding DICHI}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="325,68,73,307" RenderTransformOrigin="0.339,0.6" />
                                     <materialDesign:PackIcon Kind="MapMarker" Height="27" Width="30" RenderTransformOrigin="4.649,1.6" Margin="292,81,0,0" />
 
@@ -216,7 +216,7 @@
                                 <Grid Grid.Column="5">
                                     <materialDesign:PackIcon Kind="Cash" Height="26" Width="26" Margin="292,136,0,0" RenderTransformOrigin="6.582,1.294" />
                                     <ComboBox
-  materialDesign:HintAssist.Hint="Chi phí dự tính" Margin="324,137,70,253" Height="25">
+  materialDesign:HintAssist.Hint="Chi phí dự tính" Margin="324,137,70,253" Height="25" Text="{Binding chiphi}">
                                         <ComboBoxItem
     Content="5tr - 10tr" />
                                         <ComboBoxItem
@@ -229,16 +229,17 @@
 
                                 </Grid>
                                 <Grid Grid.Column="6">
-                                    <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" Width="227" materialDesign:HintAssist.Hint="Ngày bắt đầu" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="325,197,0,190" Height="28" />
+                                    <DatePicker VerticalAlignment="Center" SelectedDate="{Binding NgayBatDau, StringFormat='dd/MM/yyyy'}" Margin="330,201,66,189" materialDesign:HintAssist.Hint="Ngày Bắt Đầu" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+
                                     <materialDesign:PackIcon Kind="ViewDay" Height="28" Margin="291,194,0,0" Width="26" RenderTransformOrigin="7.279,-1.331" />
                                 </Grid>
                                 <Grid Grid.Column="7">
-                                    <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" Width="226" materialDesign:HintAssist.Hint="Ngày kết thúc" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="330,249,0,138" Height="28" />
+                                    <DatePicker VerticalAlignment="Center" SelectedDate="{Binding NgayKetThuc, StringFormat='dd/MM/yyyy'}" Margin="330,249,66,141" materialDesign:HintAssist.Hint="Ngày Kết Thúc" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                                     <materialDesign:PackIcon Kind="ViewDay" Height="27" Margin="290,248,0,0" Width="25" RenderTransformOrigin="7.279,-1.331" />
                                 </Grid>
                             </Grid>
 
-                           
+
                             <Grid Margin="0,0,0,-155">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -246,19 +247,37 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <ListView Margin="0,303,0,-160">
-                                    <ListView.View>
+                                    <!--<ListView.View ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
                                         <GridView>
                                             <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>
-                                            <GridViewColumn Header="Họ Và Tên" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
-                                            <GridViewColumn Header="Số Điện Thoại" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                            <GridViewColumn Header="Số Lượng Người" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                            <GridViewColumn Header="Ghi Chú" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                            <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                            <GridViewColumn Header="Chi Phí" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                            <GridViewColumn Header="Ngày Bắt Đầu" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                            <GridViewColumn Header="Ngày Kết Thúc" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                            <GridViewColumn Header="Họ Và Tên" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                                            <GridViewColumn Header="Số Điện Thoại" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
+                                            <GridViewColumn Header="Số Lượng Người" DisplayMemberBinding="{Binding soluong}"></GridViewColumn>
+                                            <GridViewColumn Header="Ghi Chú" DisplayMemberBinding="{Binding ghichu}"></GridViewColumn>
+                                            <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding DICHI}"></GridViewColumn>
+                                            <GridViewColumn Header="Chi Phí" DisplayMemberBinding="{Binding chiphi}"></GridViewColumn>
+                                            <GridViewColumn Header="Ngày Bắt Đầu" DisplayMemberBinding="{Binding NgayBatDau}"></GridViewColumn>
+                                            <GridViewColumn Header="Ngày Kết Thúc" DisplayMemberBinding="{Binding NgayKetThuc}"></GridViewColumn>
                                         </GridView>
-                                    </ListView.View>
+                                    </ListView.View>-->
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="STT" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                                                    <GridViewColumn Header="Họ Và Tên" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                                                    <GridViewColumn Header="Số Điện Thoại" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
+                                                    <GridViewColumn Header="Số Lượng Người" DisplayMemberBinding="{Binding soluong}"></GridViewColumn>
+                                                    <GridViewColumn Header="Ghi Chú" DisplayMemberBinding="{Binding ghichu}"></GridViewColumn>
+                                                    <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding DICHI}"></GridViewColumn>
+                                                    <GridViewColumn Header="Chi Phí" DisplayMemberBinding="{Binding chiphi}"></GridViewColumn>
+                                                    <GridViewColumn Header="Ngày Bắt Đầu" DisplayMemberBinding="{Binding NgayBatDau}"></GridViewColumn>
+                                                    <GridViewColumn Header="Ngày Kết Thúc" DisplayMemberBinding="{Binding NgayKetThuc}"></GridViewColumn>
+
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </ScrollViewer>
                                 </ListView>
                             </Grid>
                         </Grid>

@@ -2,17 +2,17 @@
 <Schema Namespace="PhanmemQuanLydkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Customer">
     <Key>
-      <PropertyRef Name="STT" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="STT" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
-    <Property Name="soluong" Type="int" />
+    <Property Name="soluong" Type="nvarchar" MaxLength="20" />
     <Property Name="ghichu" Type="nvarchar" MaxLength="200" />
     <Property Name="DICHI" Type="nvarchar" MaxLength="200" />
     <Property Name="chiphi" Type="nvarchar" MaxLength="100" />
-    <Property Name="NgayBatDau" Type="smalldatetime" />
-    <Property Name="NgayKetThuc" Type="smalldatetime" />
+    <Property Name="NgayBatDau" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayKetThuc" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Input">
     <Key>
@@ -34,6 +34,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DisplayName" Type="nvarchar(max)" />
+    <Property Name="UserName" Type="nchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

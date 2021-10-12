@@ -9,19 +9,28 @@
 
 namespace QuanLyKho.Model
 {
+    using QuanLyKho.ViewModel;
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Customer : BaseViewModel
     {
-        public int STT { get; set; }
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public string ghichu { get; set; }
-        public string DICHI { get; set; }
-        public string chiphi { get; set; }
-        public Nullable<System.DateTime> NgayBatDau { get; set; }
-        public Nullable<System.DateTime> NgayKetThuc { get; set; }
+        public int Id { get; set; }
+        private string _Name { get; set; }
+        public string Name { get => _Name; set { _Name = value; OnPropertyChanged(); } }
+        private string _Phone { get; set; }
+        public string Phone { get => _Phone; set { _Phone = value; OnPropertyChanged(); } }
+        private string _soluong { get; set; }
+        public string soluong { get => _soluong; set { _soluong = value; OnPropertyChanged(); } }
+        private string _ghichu { get; set; }
+        public string ghichu { get => _ghichu; set { _ghichu = value; OnPropertyChanged(); } }
+        private string _DICHI { get; set; }
+        public string DICHI { get => _DICHI; set { _DICHI = value; OnPropertyChanged(); } }
+        private string _chiphi { get; set; }
+        public string chiphi { get => _chiphi; set { _chiphi = value; OnPropertyChanged(); } }
+        private string _NgayBatDau { get; set; }
+        public string NgayBatDau { get => _NgayBatDau; set { _NgayBatDau = value; OnPropertyChanged(); } }
+        private string _NgayKetThuc { get; set; }
+        public string NgayKetThuc { get => _NgayKetThuc; set { _NgayKetThuc = value; OnPropertyChanged(); } }
     }
 }

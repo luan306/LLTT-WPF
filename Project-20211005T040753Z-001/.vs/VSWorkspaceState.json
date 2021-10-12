@@ -3,8 +3,10 @@
     "",
     "\\Project",
     "\\Project\\QuanLyKho",
-    "\\Project\\QuanLyKho\\QuanLyKho"
+    "\\Project\\QuanLyKho\\QuanLyKho",
+    "\\Project\\QuanLyKho\\QuanLyKho\\ResourceXAML",
+    "\\Project\\QuanLyKho\\QuanLyKho\\ViewModel"
   ],
-  "SelectedNode": "\\Project\\QuanLyKho\\QuanLyKho\\MainWindow.xaml",
+  "SelectedNode": "\\Project\\QuanLyKho\\QuanLyKho\\ViewModel\\userviewmodel.cs",
   "PreviewInSolutionExplorer": false
 }
