@@ -22,8 +22,8 @@
     <Property Name="ghichu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="DICHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="chiphi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="NgayBatDau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="NgayKetThuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Input">
     <Key>

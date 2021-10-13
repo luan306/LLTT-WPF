@@ -28,9 +28,9 @@ namespace QuanLyKho.Model
         public string DICHI { get => _DICHI; set { _DICHI = value; OnPropertyChanged(); } }
         private string _chiphi { get; set; }
         public string chiphi { get => _chiphi; set { _chiphi = value; OnPropertyChanged(); } }
-        private string _NgayBatDau { get; set; }
-        public string NgayBatDau { get => _NgayBatDau; set { _NgayBatDau = value; OnPropertyChanged(); } }
-        private string _NgayKetThuc { get; set; }
-        public string NgayKetThuc { get => _NgayKetThuc; set { _NgayKetThuc = value; OnPropertyChanged(); } }
+        Nullable<System.DateTime> _NgayBatDau;
+        public Nullable<System.DateTime> NgayBatDau { get => _NgayBatDau; set { _NgayBatDau = value; OnPropertyChanged(); } }
+        Nullable<System.DateTime> _NgayKetThuc;
+        public Nullable<System.DateTime> NgayKetThuc { get => _NgayKetThuc; set { _NgayKetThuc = value; OnPropertyChanged(); } }
     }
 }

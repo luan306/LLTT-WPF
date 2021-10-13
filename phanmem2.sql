@@ -5,10 +5,10 @@ use PhanmemQuanLydk
 go
 create table Customer
 (
-	STT int primary key,
+	Id int primary key,
 	Name nvarchar(100),
 	Phone nvarchar(20),
-	soluong int,
+	soluong nvarchar(20) ,
 	ghichu nvarchar (200),
 	DICHI nvarchar (200),
 	chiphi nvarchar(100),

@@ -65,10 +65,10 @@ namespace QuanLyKho.ViewModel
         public string chiphi { get => _chiphi; set { _chiphi = value; OnPropertyChanged(); } }
 
 
-        private string _NgayBatDau;
-        public string NgayBatDau { get => _NgayBatDau; set { _NgayBatDau = value; OnPropertyChanged(); } }
-        private string _NgayKetThuc;
-        public string NgayKetThuc { get => _NgayKetThuc; set { _NgayKetThuc = value; OnPropertyChanged(); } }
+        private DateTime? _NgayBatDau;
+        public DateTime? NgayBatDau { get => _NgayBatDau; set { _NgayBatDau = value; OnPropertyChanged(); } }
+        private DateTime? _NgayKetThuc;
+        public DateTime? NgayKetThuc { get => _NgayKetThuc; set { _NgayKetThuc = value; OnPropertyChanged(); } }
         public ICommand AddCommand { get; set; }
         public ICommand EditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }

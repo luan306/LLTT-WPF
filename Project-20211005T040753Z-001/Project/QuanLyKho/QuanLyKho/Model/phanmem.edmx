@@ -16,8 +16,8 @@
           <Property Name="ghichu" Type="nvarchar" MaxLength="200" />
           <Property Name="DICHI" Type="nvarchar" MaxLength="200" />
           <Property Name="chiphi" Type="nvarchar" MaxLength="100" />
-          <Property Name="NgayBatDau" Type="nvarchar" MaxLength="100" />
-          <Property Name="NgayKetThuc" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgayBatDau" Type="smalldatetime" />
+          <Property Name="NgayKetThuc" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="Input">
           <Key>
@@ -100,8 +100,8 @@
           <Property Name="ghichu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="DICHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="chiphi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NgayBatDau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NgayKetThuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
+          <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Input">
           <Key>

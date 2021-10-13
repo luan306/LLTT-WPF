@@ -11,8 +11,8 @@
     <Property Name="ghichu" Type="nvarchar" MaxLength="200" />
     <Property Name="DICHI" Type="nvarchar" MaxLength="200" />
     <Property Name="chiphi" Type="nvarchar" MaxLength="100" />
-    <Property Name="NgayBatDau" Type="nvarchar" MaxLength="100" />
-    <Property Name="NgayKetThuc" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayBatDau" Type="smalldatetime" />
+    <Property Name="NgayKetThuc" Type="smalldatetime" />
   </EntityType>
   <EntityType Name="Input">
     <Key>
